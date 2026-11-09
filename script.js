@@ -1,534 +1,193 @@
-
-/* ==========================================
-   IRTAZA AHMED - PERSONAL PORTFOLIO
-   Main JavaScript
-   ========================================== */
-
-/* ------------------------------------------
-   1. PERSONAL CONFIGURATION
-   Edit these details with your real links.
-   ------------------------------------------ */
-
+/* Irtaza Ahmed — portfolio interactions and profile links */
 const portfolioConfig = {
-    name: "Irtaza Ahmed",
-    email: "irtaza.ahm3d@gmail.com",
-    github: "github.com/irtazaahm3d",
-    linkedin: "irtazaahm3d",
-    location: "Rawalpindi, Pakistan",
-    degree: "BE Information Security",
-    university: "National University of Sciences and Technology (NUST)",
-    institution: "Military College of Signals (MCS)"
+  name: "Irtaza Ahmed",
+  email: "irtaza.ahm3d@gmail.com",
+  githubUrl: "https://github.com/irtazaahm3d",
+  linkedinUrl: "https://www.linkedin.com/in/irtazaahm3d/",
+  location: "Rawalpindi, Pakistan",
+  degree: "BE Information Security",
+  university: "National University of Sciences and Technology (NUST)",
+  institution: "Military College of Signals (MCS)"
 };
-
-
-/* ------------------------------------------
-   2. DOM ELEMENTS
-   ------------------------------------------ */
 
 const root = document.documentElement;
 const themeToggle = document.querySelector("#themeToggle");
 const menuToggle = document.querySelector("#menuToggle");
-const navMenu = document.querySelector("#navMenu");
+const navMenu = document.querySelector("#primaryNav");
 const backToTop = document.querySelector("#backToTop");
 const yearElement = document.querySelector("#currentYear");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/* Keep the contact area driven by one configuration object. */
+function configureContactLinks() {
+  const emailLink = document.querySelector("#emailLink");
+  const emailText = document.querySelector("#emailText");
+  const githubLink = document.querySelector("#githubLink");
+  const linkedinLink = document.querySelector("#linkedinLink");
 
-/* ------------------------------------------
-   3. DYNAMIC FOOTER YEAR
-   ------------------------------------------ */
+  if (emailLink && portfolioConfig.email) {
+    emailLink.href = `mailto:${portfolioConfig.email}`;
+    if (emailText) emailText.textContent = portfolioConfig.email;
+  }
+  if (githubLink && portfolioConfig.githubUrl) githubLink.href = portfolioConfig.githubUrl;
+  if (linkedinLink && portfolioConfig.linkedinUrl) linkedinLink.href = portfolioConfig.linkedinUrl;
 
-if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
+  const note = document.querySelector("#contactConfigNote");
+  if (note) note.hidden = true;
 }
 
+configureContactLinks();
 
-/* ------------------------------------------
-   4. THEME MANAGEMENT
-   Dark / Light mode with saved preference
-   ------------------------------------------ */
+if (yearElement) yearElement.textContent = new Date().getFullYear();
 
+/* Theme toggle: preserve the inline SVG icons already in the HTML. */
 function setTheme(theme) {
-    root.setAttribute("data-theme", theme);
-
-    localStorage.setItem("portfolio-theme", theme);
-
-    if (themeToggle) {
-        themeToggle.setAttribute(
-            "aria-label",
-            theme === "dark"
-                ? "Switch to light mode"
-                : "Switch to dark mode"
-        );
-
-        themeToggle.innerHTML =
-            theme === "dark"
-                ? '<i class="fa-regular fa-sun"></i>'
-                : '<i class="fa-regular fa-moon"></i>';
-    }
+  root.setAttribute("data-theme", theme);
+  try { localStorage.setItem("portfolio-theme", theme); } catch (_) {}
+  if (themeToggle) {
+    themeToggle.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
+    );
+    themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+  }
 }
 
-const savedTheme = localStorage.getItem("portfolio-theme");
-
-const preferredTheme =
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
-
+let savedTheme = null;
+try { savedTheme = localStorage.getItem("portfolio-theme"); } catch (_) {}
+const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 setTheme(savedTheme || preferredTheme);
 
-if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-        const currentTheme = root.getAttribute("data-theme");
-
-        setTheme(currentTheme === "dark" ? "light" : "dark");
-    });
-}
-
-
-/* ------------------------------------------
-   5. MOBILE NAVIGATION
-   ------------------------------------------ */
-
-if (menuToggle && navMenu) {
-    menuToggle.addEventListener("click", () => {
-        const isOpen = navMenu.classList.toggle("active");
-
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-
-        menuToggle.innerHTML = isOpen
-            ? '<i class="fa-solid fa-xmark"></i>'
-            : '<i class="fa-solid fa-bars"></i>';
-    });
-
-    // Close navigation after selecting a link
-    navMenu.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-            navMenu.classList.remove("active");
-
-            menuToggle.setAttribute("aria-expanded", "false");
-
-            menuToggle.innerHTML =
-                '<i class="fa-solid fa-bars"></i>';
-        });
-    });
-
-    // Close menu with Escape
-    document.addEventListener("keydown", event => {
-        if (event.key === "Escape") {
-            navMenu.classList.remove("active");
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.innerHTML =
-                '<i class="fa-solid fa-bars"></i>';
-        }
-    });
-}
-
-
-/* ------------------------------------------
-   6. SMOOTH SCROLLING
-   ------------------------------------------ */
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", event => {
-        const targetId = anchor.getAttribute("href");
-
-        if (!targetId || targetId === "#") return;
-
-        const target = document.querySelector(targetId);
-
-        if (target) {
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        }
-    });
+themeToggle?.addEventListener("click", () => {
+  setTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
 });
 
+/* Mobile navigation uses the actual #primaryNav element in index.html. */
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navMenu.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+  });
 
-/* ------------------------------------------
-   7. ACTIVE NAVIGATION
-   Highlight current section
-   ------------------------------------------ */
-
-const sections = document.querySelectorAll("section[id]");
-
-const navigationLinks = document.querySelectorAll(
-    '.nav-link[href^="#"]'
-);
-
-if ("IntersectionObserver" in window) {
-    const sectionObserver = new IntersectionObserver(
-        entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navigationLinks.forEach(link => {
-                        link.classList.toggle(
-                            "active",
-                            link.getAttribute("href") ===
-                            `#${entry.target.id}`
-                        );
-                    });
-                }
-            });
-        },
-        {
-            rootMargin: "-35% 0px -55% 0px"
-        }
-    );
-
-    sections.forEach(section => {
-        sectionObserver.observe(section);
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation menu");
     });
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      navMenu.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation menu");
+    }
+  });
 }
 
+/* Smooth in-page navigation. */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", event => {
+    const targetId = anchor.getAttribute("href");
+    if (!targetId || targetId === "#") return;
+    const target = document.querySelector(targetId);
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    if (history.replaceState) history.replaceState(null, "", targetId);
+  });
+});
 
-/* ------------------------------------------
-   8. PROJECT FILTERING
-   Filter projects by category
-   ------------------------------------------ */
+/* Highlight the current section in the desktop navigation. */
+const sections = document.querySelectorAll("main section[id]");
+const navigationLinks = document.querySelectorAll(".primary-nav a[href^='#']");
+if ("IntersectionObserver" in window) {
+  const navObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      navigationLinks.forEach(link => {
+        const current = link.getAttribute("href") === `#${entry.target.id}`;
+        link.classList.toggle("is-current", current);
+        if (current) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    });
+  }, { rootMargin: "-35% 0px -55% 0px" });
+  sections.forEach(section => navObserver.observe(section));
+}
 
-const filterButtons = document.querySelectorAll(
-    ".filter-btn"
-);
-
-const projectCards = document.querySelectorAll(
-    ".project-card"
-);
+/* Project filtering and a live result count. */
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = [...document.querySelectorAll(".project-card")];
+const filterStatus = document.querySelector("#filterStatus");
 
 filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const selectedCategory = button.dataset.filter;
+  button.addEventListener("click", () => {
+    const category = button.dataset.filter || "all";
+    let visibleCount = 0;
 
-        // Update active filter button
-        filterButtons.forEach(btn => {
-            btn.classList.remove("active");
-            btn.setAttribute("aria-pressed", "false");
-        });
-
-        button.classList.add("active");
-        button.setAttribute("aria-pressed", "true");
-
-        // Filter project cards
-        projectCards.forEach(card => {
-            const cardCategory = card.dataset.category;
-
-            const shouldShow =
-                selectedCategory === "all" ||
-                cardCategory === selectedCategory;
-
-            card.hidden = !shouldShow;
-        });
+    filterButtons.forEach(item => {
+      const active = item === button;
+      item.classList.toggle("is-active", active);
+      item.setAttribute("aria-pressed", String(active));
     });
+
+    projectCards.forEach(card => {
+      const show = category === "all" || card.dataset.category === category;
+      card.hidden = !show;
+      if (show) visibleCount += 1;
+    });
+
+    if (filterStatus) {
+      filterStatus.textContent = category === "all"
+        ? `Showing all ${visibleCount} items`
+        : `Showing ${visibleCount} ${category} item${visibleCount === 1 ? "" : "s"}`;
+    }
+  });
 });
 
-
-/* ------------------------------------------
-   9. SCROLL REVEAL ANIMATIONS
-   Reveal content when it enters viewport
-   ------------------------------------------ */
-
-const revealElements = document.querySelectorAll(
-    ".reveal, .reveal-up, .reveal-left, .reveal-right"
-);
-
-const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-).matches;
-
+/* Respect reduced-motion preferences for reveal animations. */
+const revealElements = document.querySelectorAll(".reveal, .reveal-up, .reveal-left, .reveal-right");
 if ("IntersectionObserver" in window && !reduceMotion) {
-    const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-    revealElements.forEach(element => {
-        revealObserver.observe(element);
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.12 });
+  revealElements.forEach(element => revealObserver.observe(element));
 } else {
-    revealElements.forEach(element => {
-        element.classList.add("visible");
-    });
+  revealElements.forEach(element => element.classList.add("visible"));
 }
 
-
-/* ------------------------------------------
-   10. BACK TO TOP BUTTON
-   ------------------------------------------ */
-
+/* Back-to-top control. */
 function updateBackToTop() {
-    if (!backToTop) return;
-
-    backToTop.classList.toggle(
-        "show",
-        window.scrollY > 400
-    );
+  backToTop?.classList.toggle("show", window.scrollY > 400);
 }
-
-window.addEventListener("scroll", updateBackToTop, {
-    passive: true
-});
-
+window.addEventListener("scroll", updateBackToTop, { passive: true });
 updateBackToTop();
+backToTop?.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+});
 
-if (backToTop) {
-    backToTop.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: reduceMotion ? "instant" : "smooth"
-        });
-    });
-}
+/* The HTML uses data-print-cv; support the existing print-CV button. */
+document.querySelectorAll("[data-print-cv], #printCV").forEach(button => {
+  button.addEventListener("click", () => window.print());
+});
 
-
-/* ------------------------------------------
-   11. TYPING ANIMATION
-   Hero section text animation
-   ------------------------------------------ */
-
-const typingElement = document.querySelector("#typingText");
-
-const typingWords = [
-    "Information Security Student",
-    "Aspiring SOC Analyst",
-    "Cybersecurity Enthusiast",
-    "Digital Forensics Learner",
-    "Web Security Researcher"
-];
-
-let wordIndex = 0;
-let characterIndex = 0;
-let deleting = false;
-
-function typeEffect() {
-    if (!typingElement || reduceMotion) return;
-
-    const currentWord = typingWords[wordIndex];
-
-    if (deleting) {
-        characterIndex--;
-    } else {
-        characterIndex++;
-    }
-
-    typingElement.textContent = currentWord.substring(
-        0,
-        characterIndex
-    );
-
-    let delay = deleting ? 45 : 90;
-
-    if (!deleting && characterIndex === currentWord.length) {
-        deleting = true;
-        delay = 1600;
-    } else if (deleting && characterIndex === 0) {
-        deleting = false;
-
-        wordIndex = (wordIndex + 1) % typingWords.length;
-
-        delay = 400;
-    }
-
-    setTimeout(typeEffect, delay);
-}
-
-if (typingElement && !reduceMotion) {
-    typeEffect();
-}
-
-
-/* ------------------------------------------
-   12. SKILL BAR ANIMATION
-   ------------------------------------------ */
-
-const skillBars = document.querySelectorAll(
-    ".skill-progress"
-);
-
-if ("IntersectionObserver" in window) {
-    const skillObserver = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const bar = entry.target;
-
-                    const percentage = bar.dataset.progress;
-
-                    if (
-                        percentage &&
-                        Number(percentage) >= 0 &&
-                        Number(percentage) <= 100
-                    ) {
-                        bar.style.width = `${percentage}%`;
-                    }
-
-                    observer.unobserve(bar);
-                }
-            });
-        },
-        {
-            threshold: 0.4
-        }
-    );
-
-    skillBars.forEach(bar => {
-        skillObserver.observe(bar);
-    });
-}
-
-
-/* ------------------------------------------
-   13. CONTACT FORM VALIDATION
-   Frontend validation only.
-   A backend or form service is needed
-   to actually send messages.
-   ------------------------------------------ */
-
-const contactForm = document.querySelector("#contactForm");
-
-if (contactForm) {
-    contactForm.addEventListener("submit", event => {
-        event.preventDefault();
-
-        const nameInput = contactForm.querySelector(
-            '[name="name"]'
-        );
-
-        const emailInput = contactForm.querySelector(
-            '[name="email"]'
-        );
-
-        const messageInput = contactForm.querySelector(
-            '[name="message"]'
-        );
-
-        const name = nameInput?.value.trim();
-        const email = emailInput?.value.trim();
-        const message = messageInput?.value.trim();
-
-        if (!name || !email || !message) {
-            alert("Please complete all required fields.");
-            return;
-        }
-
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailPattern.test(email)) {
-            alert("Please enter a valid email address.");
-            emailInput.focus();
-            return;
-        }
-
-        alert(
-            "Your details are valid. Connect a form service to enable message delivery."
-        );
-    });
-}
-
-
-/* ------------------------------------------
-   14. COPY EMAIL TO CLIPBOARD
-   ------------------------------------------ */
-
-const copyEmailButton = document.querySelector(
-    "#copyEmail"
-);
-
-if (copyEmailButton) {
-    copyEmailButton.addEventListener("click", async () => {
-        const email = portfolioConfig.email;
-
-        if (!email) {
-            alert("Please add your email in portfolioConfig.");
-            return;
-        }
-
-        try {
-            await navigator.clipboard.writeText(email);
-
-            const originalText = copyEmailButton.innerHTML;
-
-            copyEmailButton.innerHTML =
-                '<i class="fa-solid fa-check"></i> Copied!';
-
-            setTimeout(() => {
-                copyEmailButton.innerHTML = originalText;
-            }, 2000);
-
-        } catch (error) {
-            alert("Unable to copy email. Please copy it manually.");
-        }
-    });
-}
-
-
-/* ------------------------------------------
-   15. PRINT / DOWNLOAD CV
-   Opens browser print dialog.
-   Select Save as PDF.
-   ------------------------------------------ */
-
-const printCVButton = document.querySelector("#printCV");
-
-if (printCVButton) {
-    printCVButton.addEventListener("click", () => {
-        window.print();
-    });
-}
-
-
-/* ------------------------------------------
-   16. EXTERNAL LINKS SECURITY
-   Add safe attributes to external links.
-   ------------------------------------------ */
-
+/* Add safe rel attributes to all external links. */
 document.querySelectorAll('a[target="_blank"]').forEach(link => {
-    link.setAttribute("rel", "noopener noreferrer");
+  link.setAttribute("rel", "noopener noreferrer");
 });
 
-
-/* ------------------------------------------
-   17. ACCESSIBILITY
-   Keyboard and focus improvements
-   ------------------------------------------ */
-
+/* Keyboard focus visibility helper. */
 document.addEventListener("keydown", event => {
-    if (
-        event.key === "Tab" &&
-        document.activeElement
-    ) {
-        document.body.classList.add("keyboard-navigation");
-    }
+  if (event.key === "Tab") document.body.classList.add("keyboard-navigation");
 });
-
 document.addEventListener("mousedown", () => {
-    document.body.classList.remove("keyboard-navigation");
-});
-
-
-/* ------------------------------------------
-   18. INITIALIZATION
-   ------------------------------------------ */
-
-document.addEventListener("DOMContentLoaded", () => {
-    console.log(
-        "%cWelcome to Irtaza Ahmed's Portfolio!",
-        "color: #38bdf8; font-size: 16px; font-weight: bold;"
-    );
-
-    console.log(
-        "Information Security | Cybersecurity | Digital Forensics"
-    );
+  document.body.classList.remove("keyboard-navigation");
 });
