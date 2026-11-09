@@ -1,7 +1,9 @@
 # Irtaza Ahmed
 **Information Security Engineering Student | Aspiring Information Security Engineer**  
 Rawalpindi, Pakistan  
-Email: Add your email  |  GitHub: Add your profile  |  LinkedIn: Add your profile
+Email: [irtaza.ahm3d@gmail.com](mailto:irtaza.ahm3d@gmail.com)  
+GitHub: [github.com/irtazaahm3d](https://github.com/irtazaahm3d)  
+LinkedIn: [linkedin.com/in/irtazaahm3d](https://www.linkedin.com/in/irtazaahm3d/)
 
 ## Professional Profile
 Undergraduate Information Security engineering student at the National University of Sciences and Technology (NUST), Military College of Signals. Building practical foundations in cybersecurity through academic work, controlled labs, and continuous self-study. Key areas of interest include SOC operations, SIEM workflows, digital forensics, web application security, network security, and secure systems. Values careful investigation, evidence-based reasoning, and clear technical documentation.
@@ -11,10 +13,8 @@ Undergraduate Information Security engineering student at the National Universit
 National University of Sciences and Technology (NUST)  
 Military College of Signals (MCS), Rawalpindi, Pakistan  
 Status: Currently enrolled
-Relevant coursework: Human–Computer Interaction, Software Engineering, Digital Information Forensics, Network Security Engineering, and Cloud Architecture & Security
 
 ## Selected Projects, Labs & Academic Work
-
 **Wazuh SIEM Home Lab** — Hands-on lab  
 Set up a local Wazuh environment on Parrot Security and accessed its web dashboard to explore security monitoring, alerts, and event investigation. Documented setup and troubleshooting.
 
@@ -57,4 +57,4 @@ Reviewed research on anti-forensic techniques and their impact on digital invest
 SOC operations and incident response · Digital forensics · Web application security · Network security · Secure systems
 
 ---
-*This CV lists academic projects, guided practical exercises, and self-study accurately. Add verified dates, contact details, certifications, employment, and measurable outcomes as they become available.*
+*This CV lists academic projects, guided practical exercises, and self-study accurately. Add verified dates, certifications, employment, and measurable outcomes as they become available.*
