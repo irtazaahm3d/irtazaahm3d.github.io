@@ -1,271 +1,67 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f5f7fb">
-  <meta name="description" content="Irtaza Ahmed — Information Security engineering student at NUST MCS. Explore cybersecurity labs, digital forensics, SIEM, web security, and academic projects.">
-  <meta property="og:title" content="Irtaza Ahmed | Information Security Portfolio">
-  <meta property="og:description" content="An aspiring Information Security Engineer focused on practical cybersecurity, digital forensics, and secure systems.">
-  <meta property="og:type" content="website">
-  <title>Irtaza Ahmed | Information Security Portfolio</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23566bf0'/%3E%3Ctext x='32' y='42' font-size='25' font-family='Arial,sans-serif' font-weight='700' text-anchor='middle' fill='white'%3EIA%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10131b">
+<meta name="description" content="Irtaza Ahmed — Information Security Engineering student at NUST MCS. Cybersecurity labs, digital forensics, SOC learning and projects.">
+<meta property="og:title" content="Irtaza Ahmed | Information Security Portfolio">
+<meta property="og:description" content="Information Security Engineering student exploring SOC operations, digital forensics and web security.">
+<title>Irtaza Ahmed | Information Security</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Irtaza Ahmed home">
-        <span class="brand-mark">IA<span>.</span></span>
-        <span class="brand-name">Irtaza Ahmed</span>
-      </a>
-
-      <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNav">
-        <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
-        <svg class="close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
-      </button>
-
-      <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" title="Switch theme">
-          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
-          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8 8.8 8.8 0 1 0 20.2 15.2Z"/></svg>
-        </button>
-        <button class="button button-small button-outline print-button" type="button" data-print-cv>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v7H7z"/><path d="M17 12h.01"/></svg>
-          Print CV
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero section-shell" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot"></span> Information Security Engineering Student</p>
-          <h1 id="hero-title">Curious about systems.<br><span class="gradient-text">Committed to securing them.</span></h1>
-          <p class="hero-lead">I’m <strong>Irtaza Ahmed</strong>, an aspiring Information Security Engineer at NUST Military College of Signals. I learn by building labs, investigating security concepts, and turning technical practice into clear documentation.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
-            <a class="button button-quiet" href="#contact">Get in touch <span aria-hidden="true">→</span></a>
-          </div>
-          <div class="hero-meta" aria-label="Profile details">
-            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg> Rawalpindi, Pakistan</span>
-            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg> Hands-on learner</span>
-          </div>
-        </div>
-
-        <aside class="hero-visual" aria-label="Profile snapshot">
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-          <div class="profile-card">
-            <div class="profile-card-top"><span class="mini-label">PROFILE / 001</span><span class="availability"><span></span> Learning & building</span></div>
-            <div class="avatar-wrap"><div class="avatar">IA</div><span class="avatar-ring ring-a"></span><span class="avatar-ring ring-b"></span></div>
-            <h2>Irtaza Ahmed</h2>
-            <p class="profile-role">Information Security · NUST MCS</p>
-            <div class="profile-divider"></div>
-            <div class="profile-facts">
-              <div><span>STUDYING</span><strong>BE Information Security</strong></div>
-              <div><span>INTERESTS</span><strong>SOC · Forensics · Web Security</strong></div>
-              <div><span>APPROACH</span><strong>Learn. Test. Document.</strong></div>
-            </div>
-            <div class="profile-card-foot"><span>SECURITY-MINDED</span><span class="tiny-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
-          </div>
-          <div class="floating-chip chip-top"><span class="chip-icon">⌘</span> Practical labs</div>
-          <div class="floating-chip chip-bottom"><span class="chip-icon chip-green">✓</span> Always learning</div>
-          <span class="visual-spark spark-one" aria-hidden="true">✳</span>
-          <span class="visual-spark spark-two" aria-hidden="true">＋</span>
-        </aside>
-      </div>
-      <div class="container hero-bottom">
-        <span class="scroll-hint"><span class="scroll-line"></span> SCROLL TO EXPLORE</span>
-        <span class="hero-note">A growing portfolio of learning, labs, and academic work.</span>
-      </div>
-    </section>
-
-    <section class="section section-about" id="about" aria-labelledby="about-title">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-kicker">01 / ABOUT</p>
-          <h2 id="about-title">A security mindset,<br><span class="muted-heading">built through practice.</span></h2>
-        </div>
-        <div class="about-grid">
-          <div class="about-story">
-            <p class="lead-paragraph">I’m an undergraduate Information Security engineering student with a growing interest in how digital systems are protected, monitored, and investigated.</p>
-            <p>My learning so far has included networking and computer fundamentals, web security exercises, digital forensics coursework, and hands-on work with tools such as Wazuh, Docker, FTK Imager, and Parrot Security OS.</p>
-            <p>I’m especially interested in the defensive side of cybersecurity—understanding security events, investigating suspicious activity, preserving evidence, and improving systems. I’m also exploring web application security to understand vulnerabilities from a practical perspective.</p>
-            <div class="principle-note"><span class="principle-mark">“</span><div><strong>My learning philosophy</strong><p>Understand the concept, practise it in a controlled environment, then document what worked and what did not.</p></div></div>
-          </div>
-          <div class="about-side">
-            <div class="about-stat"><span class="stat-icon violet">01</span><div><strong>Learn by doing</strong><p>Hands-on labs and controlled experiments.</p></div></div>
-            <div class="about-stat"><span class="stat-icon teal">02</span><div><strong>Think critically</strong><p>Understand the cause, impact, and evidence.</p></div></div>
-            <div class="about-stat"><span class="stat-icon amber">03</span><div><strong>Document clearly</strong><p>Turn practical work into useful notes and reports.</p></div></div>
-            <div class="interest-tags"><span>Cybersecurity</span><span>Problem solving</span><span>Continuous learning</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-focus" aria-labelledby="focus-title">
-      <div class="container">
-        <div class="section-heading heading-row">
-          <div><p class="section-kicker">02 / AREAS OF INTEREST</p><h2 id="focus-title">Where I’m <span class="muted-heading">focusing.</span></h2></div>
-          <p class="heading-aside">Areas I’m actively studying and building practical foundations in—not claims of professional specialisation.</p>
-        </div>
-        <div class="focus-grid">
-          <article class="focus-card focus-blue"><div class="focus-top"><span class="focus-number">01</span><span class="focus-symbol">⌁</span></div><h3>SOC & Incident Response</h3><p>Understanding security events, alert triage, SIEM workflows, incident handling, and investigation processes.</p><div class="focus-tags"><span>Wazuh</span><span>SIEM concepts</span><span>Threat analysis</span></div></article>
-          <article class="focus-card focus-green"><div class="focus-top"><span class="focus-number">02</span><span class="focus-symbol">◈</span></div><h3>Digital Forensics</h3><p>Learning evidence handling, disk examination, file deletion behaviour, evidence integrity, and forensic reporting.</p><div class="focus-tags"><span>FTK Imager</span><span>Evidence handling</span><span>Analysis</span></div></article>
-          <article class="focus-card focus-orange"><div class="focus-top"><span class="focus-number">03</span><span class="focus-symbol">⌘</span></div><h3>Web & Network Security</h3><p>Exploring web vulnerabilities, SQL injection fundamentals, secure communications, and network security concepts.</p><div class="focus-tags"><span>PortSwigger</span><span>Networking</span><span>TLS 1.3</span></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-education" id="education" aria-labelledby="education-title">
-      <div class="container education-layout">
-        <div class="section-heading education-heading"><p class="section-kicker">03 / EDUCATION</p><h2 id="education-title">Building the <span class="muted-heading">foundation.</span></h2><p class="section-intro">Academic study is helping me connect engineering fundamentals with practical information security.</p></div>
-        <article class="education-card">
-          <div class="education-card-top"><span class="education-badge">CURRENT EDUCATION</span><span class="education-status"><span></span> In progress</span></div>
-          <div class="university-monogram">NUST</div>
-          <h3>Bachelor of Engineering in Information Security</h3>
-          <p class="degree-short">BE Information Security (BEIS)</p>
-          <div class="education-divider"></div>
-          <p class="institution-name">National University of Sciences and Technology (NUST)</p>
-          <p class="institution-detail">Military College of Signals (MCS) · Rawalpindi, Pakistan</p>
-          <div class="education-bottom"><span>Undergraduate programme</span><a href="https://mcs.nust.edu.pk/department-page/is-ug-offered-courses/" target="_blank" rel="noopener noreferrer">Programme & course information <span aria-hidden="true">↗</span></a></div><div class="coursework-note"><strong>Relevant coursework</strong><span>Human–Computer Interaction · Software Engineering · Digital Information Forensics · Network Security Engineering · Cloud Architecture & Security</span></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section-projects" id="projects" aria-labelledby="projects-title">
-      <div class="container">
-        <div class="section-heading heading-row projects-heading">
-          <div><p class="section-kicker">04 / SELECTED WORK</p><h2 id="projects-title">Projects, labs & <span class="muted-heading">coursework.</span></h2></div>
-          <p class="heading-aside">A selection of academic assignments and practical learning exercises. Each item is labelled by its actual type.</p>
-        </div>
-
-        <div class="project-toolbar">
-          <div class="filter-group" role="group" aria-label="Filter projects">
-            <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">All work <span>07</span></button>
-            <button class="filter-btn" type="button" data-filter="security" aria-pressed="false">Security</button>
-            <button class="filter-btn" type="button" data-filter="forensics" aria-pressed="false">Forensics</button>
-            <button class="filter-btn" type="button" data-filter="development" aria-pressed="false">Development</button>
-            <button class="filter-btn" type="button" data-filter="design" aria-pressed="false">UI / UX</button>
-            <button class="filter-btn" type="button" data-filter="research" aria-pressed="false">Research</button>
-          </div>
-          <p class="filter-status" id="filterStatus" aria-live="polite">Showing all 7 items</p>
-        </div>
-
-        <div class="project-grid" id="projectGrid">
-          <article class="project-card" data-category="security">
-            <div class="project-art art-wazuh"><div class="art-window"><div class="art-window-bar"><i></i><i></i><i></i><span>security-monitor</span></div><div class="art-dashboard"><div class="dash-side"></div><div class="dash-main"><div class="dash-line long"></div><div class="dash-line"></div><div class="dash-panels"><i></i><i></i><i></i></div><div class="dash-chart"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div></div></div></div><span class="art-label">SIEM / HOME LAB</span></div>
-            <div class="project-content"><div class="project-meta"><span class="project-type">Hands-on lab</span><span class="project-index">01</span></div><h3>Wazuh SIEM Home Lab</h3><p>Set up a local Wazuh environment on Parrot Security and brought up its web dashboard to explore security monitoring, alerts, and event investigation. Documented setup and troubleshooting.</p><div class="project-tags"><span>Wazuh</span><span>Parrot Security</span><span>Linux</span></div><div class="project-foot"><span class="work-status status-practice">Practical exercise</span></div></div>
-          </article>
-
-          <article class="project-card" data-category="forensics">
-            <div class="project-art art-forensics"><div class="disk-stack"><div class="disk disk-back"></div><div class="disk disk-mid"></div><div class="disk disk-front"><span>FTK</span><small>IMAGER</small></div></div><div class="file-chip chip-file-one">FILE_01</div><div class="file-chip chip-file-two">FILE_02</div><div class="file-chip chip-file-three">FILE_03</div><span class="art-label">DIGITAL EVIDENCE</span></div>
-            <div class="project-content"><div class="project-meta"><span class="project-type">Academic lab</span><span class="project-index">02</span></div><h3>Digital Forensics: File Deletion Analysis</h3><p>Used FTK Imager in a controlled lab to examine disk evidence and compare ordinary deletion, Recycle Bin behaviour, and Shift+Delete. Prepared screenshots and investigation notes.</p><div class="project-tags"><span>FTK Imager</span><span>Disk analysis</span><span>Evidence</span></div><div class="project-foot"><span class="work-status status-course">Coursework</span></div></div>
-          </article>
-
-          <article class="project-card" data-category="design">
-            <div class="project-art art-cafe"><div class="cafe-screen"><div class="cafe-top"><span>cafeconnect</span><i></i></div><div class="cafe-title">Good food.<br><b>No long queues.</b></div><div class="cafe-items"><i></i><i></i><i></i></div><div class="cafe-order"><span>Order status</span><b>Preparing</b><em></em></div></div><span class="art-label">SERVICE DESIGN CONCEPT</span></div>
-            <div class="project-content"><div class="project-meta"><span class="project-type">Academic project</span><span class="project-index">03</span></div><h3>CafeConnect — Smart Cafeteria Ordering</h3><p>Developed a self-service cafeteria kiosk concept to address queues, unclear menu information, and uncertain order times. Planned menu browsing, customisation, payment, order tracking, and cafeteria-only lost-and-found.</p><div class="project-tags"><span>HCI</span><span>Requirements</span><span>Incremental model</span></div><div class="project-foot"><span class="work-status status-concept">Project concept</span></div></div>
-          </article>
-
-          <article class="project-card" data-category="design">
-            <div class="project-art art-travel"><div class="travel-window"><div class="travel-nav"><b>PAKISTAN.</b><span>Explore&nbsp;&nbsp; Places&nbsp;&nbsp; About</span></div><div class="travel-hero"><small>DISCOVER PAKISTAN</small><strong>Find your<br>next escape.</strong><i></i></div><div class="travel-cards"><i></i><i></i><i></i></div></div><span class="art-label">FIGMA / UI DESIGN</span></div>
-            <div class="project-content"><div class="project-meta"><span class="project-type">Design assignment</span><span class="project-index">04</span></div><h3>Pakistan Travel Website — UI Prototype</h3><p>Worked on a travel website design exercise centred on destinations within Pakistan, with attention to clear navigation, content structure, and a straightforward browsing experience.</p><div class="project-tags"><span>Figma</span><span>UI / UX</span><span>Pakistan tourism</span></div><div class="project-foot"><span class="work-status status-course">Coursework</span></div></div>
-          </article>
-
-          <article class="project-card" data-category="development">
-            <div class="project-art art-docker"><div class="container-cube"><div class="cube-top">DOCKER</div><div class="cube-front"><span>NODE.JS</span><span>NGINX</span></div><div class="cube-side">CONTAINERS</div></div><div class="terminal-mini"><span>$ docker build</span><b>image created ✓</b></div><span class="art-label">CONTAINER WORKFLOW</span></div>
-            <div class="project-content"><div class="project-meta"><span class="project-type">Hands-on lab</span><span class="project-index">05</span></div><h3>Docker Containerisation Practice</h3><p>Built and ran container images for a Node.js application and Nginx, practising Docker builds, image management, and local web-service workflows.</p><div class="project-tags"><span>Docker</span><span>Node.js</span><span>Nginx</span></div><div class="project-foot"><span class="work-status status-practice">Practical exercise</span></div></div>
-          </article>
-
-          <article class="project-card" data-category="security">
-            <div class="project-art art-tls"><div class="tls-lock"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="13" y="27" width="38" height="29" rx="6"/><path d="M21 27v-8a11 11 0 0 1 22 0v8"/><circle cx="32" cy="40" r="3"/><path d="M32 43v5"/></svg></div><div class="tls-orbit tls-o-one"></div><div class="tls-orbit tls-o-two"></div><span class="tls-version">TLS 1.3</span><span class="art-label">NETWORK SECURITY</span></div>
-            <div class="project-content"><div class="project-meta"><span class="project-type">Course practical</span><span class="project-index">06</span></div><h3>TLS 1.3 Security Lab</h3><p>Worked through a guided practical on TLS 1.3 in a Parrot Security environment, reinforcing the role of encrypted transport and secure communication protocols.</p><div class="project-tags"><span>TLS 1.3</span><span>Parrot Security</span><span>Networking</span></div><div class="project-foot"><span class="work-status status-course">Coursework</span></div></div>
-          </article>
-
-          <article class="project-card" data-category="research">
-            <div class="project-art art-research"><div class="paper-stack"><div class="paper paper-back"></div><div class="paper paper-front"><span>RESEARCH REVIEW</span><i></i><i></i><i></i><i></i><b>ANTI-FORENSICS</b><small>Evidence · Limitations · Future Work</small></div></div><span class="art-label">LITERATURE REVIEW</span></div>
-            <div class="project-content"><div class="project-meta"><span class="project-type">Research assignment</span><span class="project-index">07</span></div><h3>Anti-Forensics Research Review</h3><p>Reviewed research on anti-forensic techniques and their impact on digital investigations. Summarised the paper’s coverage, limitations, and future research directions.</p><div class="project-tags"><span>Digital forensics</span><span>Research</span><span>Critical analysis</span></div><div class="project-foot"><span class="work-status status-course">Academic research</span></div></div>
-          </article>
-        </div>
-        <p class="projects-footnote"><span aria-hidden="true">ⓘ</span> These entries describe learning and academic work. They are not presented as commercial deployments or professional client projects.</p>
-      </div>
-    </section>
-
-    <section class="section section-skills" id="skills" aria-labelledby="skills-title">
-      <div class="container">
-        <div class="section-heading heading-row">
-          <div><p class="section-kicker">05 / SKILLS & LEARNING</p><h2 id="skills-title">Tools I’ve explored.<br><span class="muted-heading">Concepts I’m developing.</span></h2></div>
-          <p class="heading-aside">This is a learning-stage skills snapshot. I prefer to show the tools and concepts I have actually practised rather than assign inflated proficiency levels.</p>
-        </div>
-        <div class="skills-layout">
-          <div class="toolkit-card">
-            <div class="toolkit-heading"><div><span class="section-kicker">PRACTICAL TOOLKIT</span><h3>Tools & environments</h3></div><span class="toolkit-icon">⌘</span></div>
-            <div class="tool-list">
-              <div class="tool-item"><span class="tool-symbol tool-linux">>_</span><div><strong>Parrot Security OS</strong><small>Linux environment and command-line practice</small></div></div>
-              <div class="tool-item"><span class="tool-symbol tool-wazuh">W</span><div><strong>Wazuh</strong><small>SIEM and security monitoring lab</small></div></div>
-              <div class="tool-item"><span class="tool-symbol tool-docker">▦</span><div><strong>Docker</strong><small>Container builds and image workflows</small></div></div>
-              <div class="tool-item"><span class="tool-symbol tool-ftk">F</span><div><strong>FTK Imager</strong><small>Digital evidence examination lab</small></div></div>
-              <div class="tool-item"><span class="tool-symbol tool-figma">◇</span><div><strong>Figma</strong><small>Interface and prototype design coursework</small></div></div>
-              <div class="tool-item"><span class="tool-symbol tool-web">⌘</span><div><strong>PortSwigger Academy</strong><small>Web security learning and SQL injection labs</small></div></div>
-            </div>
-          </div>
-          <div class="learning-card">
-            <span class="section-kicker">LEARNING JOURNEY</span>
-            <h3>Progress, not just labels.</h3>
-            <div class="learning-timeline">
-              <div class="learning-step complete"><span class="timeline-node">✓</span><div><span class="learning-state">COMPLETED</span><strong>Computer fundamentals</strong><p>Core computer concepts and foundational knowledge.</p></div></div>
-              <div class="learning-step complete"><span class="timeline-node">✓</span><div><span class="learning-state">COMPLETED</span><strong>Networking fundamentals</strong><p>Foundational networking concepts and terminology.</p></div></div>
-              <div class="learning-step complete"><span class="timeline-node">✓</span><div><span class="learning-state">COMPLETED</span><strong>TryHackMe — Pre Security</strong><p>Completed the Pre Security learning path.</p></div></div>
-              <div class="learning-step ongoing"><span class="timeline-node"><i></i></span><div><span class="learning-state">IN PROGRESS</span><strong>PortSwigger — Web Security Academy</strong><p>Working through web security topics, including SQL injection exercises.</p></div></div>
-              <div class="learning-step ongoing"><span class="timeline-node"><i></i></span><div><span class="learning-state">ONGOING SELF-STUDY</span><strong>SOC analyst foundations</strong><p>Practising alert triage, SIEM concepts, incident response, and investigation workflows.</p></div></div><div class="learning-step ongoing"><span class="timeline-node"><i></i></span><div><span class="learning-state">IN PROGRESS · ACADEMIC LAB</span><strong>AWS EC2 remote access</strong><p>Working through cloud instance access, security groups, and SSH connectivity using a key pair.</p></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="concept-strip"><span>CONCEPTS</span><p>Incident response lifecycle <b>·</b> SIEM workflows <b>·</b> Evidence integrity <b>·</b> SQL injection fundamentals <b>·</b> TLS 1.3 <b>·</b> Containerisation <b>·</b> SSH fundamentals</p></div>
-      </div>
-    </section>
-
-    <section class="section section-approach" aria-labelledby="approach-title">
-      <div class="container approach-panel">
-        <div><p class="section-kicker">06 / HOW I WORK</p><h2 id="approach-title">The habit behind<br>every <span class="approach-accent">good investigation.</span></h2></div>
-        <div class="approach-steps"><div><span>01</span><strong>Observe</strong><p>Understand the environment and identify what matters.</p></div><div><span>02</span><strong>Investigate</strong><p>Test carefully, verify assumptions, and follow evidence.</p></div><div><span>03</span><strong>Document</strong><p>Record findings, limitations, and practical next steps.</p></div></div>
-      </div>
-    </section>
-
-    <section class="section section-contact" id="contact" aria-labelledby="contact-title">
-      <div class="container contact-panel">
-        <div class="contact-copy"><p class="section-kicker">07 / CONTACT</p><h2 id="contact-title">Let’s connect<br><span class="muted-heading">and talk technology.</span></h2><p>I’m open to learning opportunities, academic collaboration, cybersecurity communities, and conversations with people working in information security.</p><div class="contact-links" id="contactLinks">
-            <a class="contact-link" id="emailLink" href="mailto:"><span class="contact-link-icon">@</span><span><small>EMAIL</small><strong id="emailText">Add email in script.js</strong></span><span class="contact-link-arrow">↗</span></a>
-            <a class="contact-link" id="githubLink" href="#" target="_blank" rel="noopener noreferrer"><span class="contact-link-icon">⌘</span><span><small>GITHUB</small><strong>View repositories</strong></span><span class="contact-link-arrow">↗</span></a>
-            <a class="contact-link" id="linkedinLink" href="#" target="_blank" rel="noopener noreferrer"><span class="contact-link-icon">in</span><span><small>LINKEDIN</small><strong>Connect professionally</strong></span><span class="contact-link-arrow">↗</span></a>
-          </div><p class="contact-config-note" id="contactConfigNote">Before publishing, add your real email and profile links in the <code>portfolioConfig</code> section of <code>script.js</code>.</p></div>
-        <div class="contact-visual"><div class="contact-orbit orbit-contact-a"></div><div class="contact-orbit orbit-contact-b"></div><div class="contact-monogram">IA<span>.</span></div><div class="contact-caption"><span class="status-dot"></span> Based in Rawalpindi, Pakistan</div><span class="contact-spark">✳</span></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner"><a class="footer-brand" href="#top">IA<span>.</span></a><p>Designed with clarity, curiosity, and accessibility in mind.</p><div class="footer-right"><span>© <span id="currentYear">2026</span> Irtaza Ahmed</span><a href="#top">Back to top ↑</a></div></div>
-  </footer>
-
-  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg></button>
-
-  <noscript><div class="noscript-note">JavaScript is disabled. The portfolio content remains available, but theme switching, project filters, and mobile navigation will not work.</div></noscript>
-</body>
-</html>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="top"><div class="container header-inner">
+<a class="brand" href="#top"><span class="brand-mark">IA<span>.</span></span><span class="brand-name">IRTaza AHMED</span></a>
+<button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNav"><span></span><span></span><span></span></button>
+<nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
+<a href="#top">Home</a><a href="#about">About</a><a href="#services">Focus</a><a href="#portfolio">Portfolio</a><a href="#milestones">Milestones</a>
+</nav>
+<a class="header-cta" href="#contact">LET'S CONNECT <span>↗</span></a>
+</div></header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title"><div class="hero-grid container">
+<div class="hero-copy"><p class="eyebrow"><i></i> INFORMATION SECURITY ENGINEERING STUDENT</p>
+<h1 id="hero-title">HELLO, I'M<br><span>IRTAZA AHMED</span></h1>
+<p class="hero-role">CYBERSECURITY ENTHUSIAST <b>·</b> NUST MCS</p>
+<p class="hero-lead">I’m an undergraduate Information Security engineering student building practical foundations in cybersecurity. I explore how systems are protected, monitored and investigated through hands-on labs, academic projects and continuous learning.</p>
+<div class="hero-actions"><a class="button button-primary" href="#about">KNOW ME MORE <span>↗</span></a><a class="text-link" href="#portfolio">EXPLORE MY WORK <span>→</span></a></div>
+<div class="hero-social"><a href="https://www.linkedin.com/in/irtazaahm3d/" target="_blank" rel="noopener">LINKEDIN ↗</a><a href="https://github.com/irtazaahm3d" target="_blank" rel="noopener">GITHUB ↗</a><span>RAWALPINDI, PAKISTAN</span></div></div>
+<div class="hero-art" aria-label="Abstract cybersecurity illustration"><div class="art-grid"></div><div class="art-glow"></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="shield"><svg viewBox="0 0 180 200" role="img" aria-label="Shield illustration"><path d="M90 8 157 34v52c0 49-29 83-67 105C52 169 23 135 23 86V34L90 8Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M90 27 140 46v39c0 37-20 64-50 84-30-20-50-47-50-84V46l50-19Z" fill="rgba(209,255,76,.07)" stroke="currentColor" stroke-width="1.5"/><path d="m66 98 17 17 34-39" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="art-label label-top">SECURITY / 001</span><span class="art-label label-bottom">LEARN · TEST · DOCUMENT</span><span class="art-cross cross-one">✳</span><span class="art-cross cross-two">＋</span></div>
+</div><div class="hero-bottom container"><span>SCROLL TO EXPLORE</span><span class="hero-bottom-line"></span><span>01 — 07</span></div></section>
+<section class="intro section" id="about"><div class="container">
+<div class="section-top"><span class="section-index">01 / ABOUT ME</span><span class="section-line"></span><span class="section-note">A LITTLE INTRODUCTION</span></div>
+<div class="intro-grid"><div><p class="section-kicker">KNOW ME MORE</p><h2>Curiosity is where<br><em>security begins.</em></h2></div><div class="intro-copy"><p class="intro-lead">I’m studying Information Security at the National University of Sciences and Technology (NUST), Military College of Signals.</p><p>My learning combines university coursework with controlled practical exercises. I have explored networking fundamentals, web security, digital forensics, Linux environments, containerisation and SIEM monitoring.</p><p>I’m especially interested in defensive security: understanding alerts, investigating suspicious activity, preserving digital evidence and learning how to make systems more resilient. I value careful testing, evidence-based thinking and clear documentation.</p><a class="inline-link" href="https://www.linkedin.com/in/irtazaahm3d/" target="_blank" rel="noopener">CONNECT ON LINKEDIN <span>↗</span></a></div></div>
+<div class="stats-row"><article><strong>07</strong><span>PROJECTS & LABS<br>DOCUMENTED</span></article><article><strong>03</strong><span>FOUNDATION<br>MILESTONES COMPLETED</span></article><article><strong>03</strong><span>CORE AREAS<br>OF FOCUS</span></article><article><strong>∞</strong><span>ROOM TO LEARN<br>AND IMPROVE</span></article></div>
+</div></section>
+<section class="services section" id="services"><div class="container"><div class="section-top"><span class="section-index">02 / WHAT I EXPLORE</span><span class="section-line"></span><span class="section-note">LEARNING AREAS</span></div><div class="section-heading-row"><div><p class="section-kicker">AREAS OF INTEREST</p><h2>Building skills.<br><em>One layer at a time.</em></h2></div><p class="section-description">These are the fields I’m actively studying and practising. I present them as learning interests, not professional services or years of industry experience.</p></div>
+<div class="service-grid">
+<article class="service-card"><span class="service-number">01</span><div class="service-icon">⌁</div><h3>SOC & INCIDENT RESPONSE</h3><p>Learning event triage, SIEM workflows, incident handling and investigation processes.</p><div class="tags"><span>Wazuh</span><span>SIEM</span><span>Threat analysis</span></div><a href="#portfolio" aria-label="See SOC and incident response work">↗</a></article>
+<article class="service-card"><span class="service-number">02</span><div class="service-icon">◈</div><h3>DIGITAL FORENSICS</h3><p>Exploring evidence handling, disk examination, file deletion behaviour and forensic reporting.</p><div class="tags"><span>FTK Imager</span><span>Evidence</span><span>Analysis</span></div><a href="#portfolio" aria-label="See digital forensics work">↗</a></article>
+<article class="service-card"><span class="service-number">03</span><div class="service-icon">⌘</div><h3>WEB & NETWORK SECURITY</h3><p>Studying web vulnerabilities, SQL injection fundamentals, TLS and network security concepts.</p><div class="tags"><span>PortSwigger</span><span>Networking</span><span>TLS 1.3</span></div><a href="#portfolio" aria-label="See web and network security work">↗</a></article>
+<article class="service-card"><span class="service-number">04</span><div class="service-icon">▦</div><h3>LINUX & CONTAINERISATION</h3><p>Practising Linux command-line workflows and building local services with Docker.</p><div class="tags"><span>Parrot OS</span><span>Docker</span><span>Nginx</span></div><a href="#portfolio" aria-label="See Linux and containerisation work">↗</a></article>
+</div></div></section>
+<section class="feature-band"><div class="container feature-grid"><div class="feature-visual"><div class="feature-ring"></div><div class="feature-lock">⌑</div><span>PRIVACY · EVIDENCE · TRUST</span></div><div class="feature-copy"><p class="section-kicker">A PRINCIPLE I BELIEVE IN</p><h2>Privacy is a right.<br><em>Security is a responsibility.</em></h2><p>Understanding security is not only about tools. It is also about protecting people, respecting data, preserving evidence and making responsible decisions.</p><a class="button button-primary" href="#contact">LET'S TALK <span>↗</span></a></div></div></section>
+<section class="portfolio section" id="portfolio"><div class="container"><div class="section-top"><span class="section-index">03 / SELECTED WORK</span><span class="section-line"></span><span class="section-note">PROJECTS · LABS · COURSEWORK</span></div><div class="section-heading-row"><div><p class="section-kicker">MY PORTFOLIO</p><h2>Practice makes<br><em>progress.</em></h2></div><p class="section-description">A selection of academic work and practical learning exercises. Each entry is labelled honestly by its type and scope.</p></div>
+<div class="portfolio-grid">
+<article class="work-card"><div class="work-art art-siem"><span>WAZUH</span><div class="fake-terminal"><i></i><i></i><i></i><b>security-monitor</b><hr><p>event.detected <small>●</small></p><p>alert.review <small>●</small></p><p>host.status <small>●</small></p></div></div><div class="work-info"><span>01 / HANDS-ON LAB</span><h3>Wazuh SIEM Home Lab</h3><p>Set up a local Wazuh environment on Parrot Security and explored the dashboard, security alerts and event investigation.</p><div class="tags"><span>Wazuh</span><span>Linux</span><span>SIEM</span></div></div></article>
+<article class="work-card"><div class="work-art art-forensics"><div class="disk-shape">FTK<small>IMAGER</small></div><span>DISK EVIDENCE</span></div><div class="work-info"><span>02 / ACADEMIC LAB</span><h3>File Deletion Analysis</h3><p>Used FTK Imager to compare ordinary deletion, Recycle Bin behaviour and Shift+Delete in a controlled exercise.</p><div class="tags"><span>FTK Imager</span><span>Forensics</span></div></div></article>
+<article class="work-card"><div class="work-art art-cafe"><div class="mini-app"><b>cafeconnect</b><strong>Good food.<br>No long queues.</strong><i></i><i></i><i></i></div><span>HCI / SERVICE DESIGN</span></div><div class="work-info"><span>03 / ACADEMIC PROJECT</span><h3>CafeConnect — Smart Ordering</h3><p>Designed a self-service cafeteria kiosk concept for menu browsing, customisation, payment, order tracking and lost-and-found.</p><div class="tags"><span>HCI</span><span>Requirements</span><span>Incremental model</span></div></div></article>
+<article class="work-card"><div class="work-art art-docker"><div class="cube">DOCKER<small>NODE.JS · NGINX</small></div><span>CONTAINER WORKFLOW</span></div><div class="work-info"><span>04 / PRACTICAL EXERCISE</span><h3>Docker Containerisation</h3><p>Built and ran Node.js and Nginx container images, practising builds, image management and local web services.</p><div class="tags"><span>Docker</span><span>Node.js</span><span>Nginx</span></div></div></article>
+<article class="work-card"><div class="work-art art-tls"><div class="tls-badge">TLS<br><b>1.3</b></div><span>ENCRYPTED TRANSPORT</span></div><div class="work-info"><span>05 / COURSE PRACTICAL</span><h3>TLS 1.3 Security Lab</h3><p>Worked through a guided TLS 1.3 practical in Parrot Security to reinforce encrypted transport and secure communication.</p><div class="tags"><span>TLS 1.3</span><span>Networking</span></div></div></article>
+<article class="work-card"><div class="work-art art-research"><div class="paper-art"><b>RESEARCH REVIEW</b><strong>ANTI-<br>FORENSICS</strong><small>EVIDENCE / LIMITATIONS / FUTURE WORK</small></div><span>LITERATURE REVIEW</span></div><div class="work-info"><span>06 / RESEARCH ASSIGNMENT</span><h3>Anti-Forensics Review</h3><p>Reviewed research on anti-forensic techniques, their impact on investigations, limitations and future research directions.</p><div class="tags"><span>Research</span><span>Forensics</span></div></div></article>
+<article class="work-card"><div class="work-art art-travel"><div class="travel-art"><b>PAKISTAN.</b><strong>Find your<br>next escape.</strong></div><span>FIGMA / UI DESIGN</span></div><div class="work-info"><span>07 / DESIGN ASSIGNMENT</span><h3>Pakistan Travel Website</h3><p>Worked on a Figma travel website concept focused on destinations within Pakistan, navigation and clear content structure.</p><div class="tags"><span>Figma</span><span>UI / UX</span></div></div></article>
+</div><p class="portfolio-note">Also explored: AWS EC2 remote access and SSH security group configuration as an academic cloud lab.</p></div></section>
+<section class="milestones section" id="milestones"><div class="container milestone-grid"><div><div class="section-top"><span class="section-index">04 / DEVELOPMENT</span><span class="section-line"></span></div><p class="section-kicker">LEARNING JOURNEY</p><h2>Always learning.<br><em>Always improving.</em></h2><p class="section-description">A transparent snapshot of completed foundations and current study.</p><div class="learning-list"><article><span class="check">✓</span><div><small>COMPLETED</small><b>Computer fundamentals</b></div></article><article><span class="check">✓</span><div><small>COMPLETED</small><b>Networking fundamentals</b></div></article><article><span class="check">✓</span><div><small>COMPLETED</small><b>TryHackMe — Pre Security</b></div></article><article><span class="progress-dot"></span><div><small>IN PROGRESS</small><b>PortSwigger Web Security Academy</b><p>Web security topics, including SQL injection exercises.</p></div></article><article><span class="progress-dot"></span><div><small>ONGOING SELF-STUDY</small><b>SOC analyst foundations</b><p>SIEM concepts, alert triage and incident response.</p></div></article></div></div>
+<aside class="education-panel"><span class="panel-label">EDUCATION / CURRENT</span><div class="nust-mark">NUST</div><h3>Bachelor of Engineering<br>in Information Security</h3><p>BE Information Security (BEIS)</p><hr><b>National University of Sciences and Technology</b><span>Military College of Signals (MCS)</span><span>Rawalpindi, Pakistan</span><div class="edu-status"><i></i> Undergraduate programme · In progress</div></aside>
+</div></section>
+<section class="contact section" id="contact"><div class="container contact-panel"><div><p class="section-kicker">05 / GET IN TOUCH</p><h2>Let's connect<br><em>and share ideas.</em></h2><p>Open to learning opportunities, academic collaboration, cybersecurity communities and conversations about information security.</p></div><div class="contact-links"><a href="mailto:irtaza.ahm3d@gmail.com"><small>EMAIL</small><b>irtaza.ahm3d@gmail.com</b><span>↗</span></a><a href="https://www.linkedin.com/in/irtazaahm3d/" target="_blank" rel="noopener"><small>LINKEDIN</small><b>Connect professionally</b><span>↗</span></a><a href="https://github.com/irtazaahm3d" target="_blank" rel="noopener"><small>GITHUB</small><b>Explore my repositories</b><span>↗</span></a></div></div></section>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><a class="brand" href="#top"><span class="brand-mark">IA<span>.</span></span></a><p>Built with curiosity, clarity and a security mindset.</p><span>© <span id="currentYear">2026</span> Irtaza Ahmed</span><a href="#top">BACK TO TOP ↑</a></div></footer>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+</body></html>
