@@ -11,9 +11,9 @@
 
 const portfolioConfig = {
     name: "Irtaza Ahmed",
-    email: "",
-    github: "",
-    linkedin: "",
+    email: "irtaza.ahm3d@gmail.com",
+    github: "github.com/irtazaahm3d",
+    linkedin: "irtazaahm3d",
     location: "Rawalpindi, Pakistan",
     degree: "BE Information Security",
     university: "National University of Sciences and Technology (NUST)",
